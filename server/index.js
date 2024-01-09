@@ -13,10 +13,11 @@ mongoose.connect(process.env.MONGO_URI).then(()=>{
     console.log(err);
 })
 
-app.listen(3000,()=>{
-    console.log("Server listening on port 3000");
+app.listen(8000,()=>{
+    console.log("Server listening on port 8000");
 })
 
+app.use(express.json())
 app.use('/api/auth',authRoutes);
 app.use('/api/vendor',vendorRoutes)
 
